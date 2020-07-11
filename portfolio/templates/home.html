@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Home {% endblock title %}
+
+{% block content %}
+
+    <div class="container">
+    <h1>This is my Portfolio</h1>
+    <img src="{% static 'images.png' %}" alt="">
+    {% for project in projects %}
+        <div>
+            <h2>{{ project.title }}</h2>
+            <h3>{{ project.description }}</h3>
+            <img src="{{ project.image.url }}">
+            {% if project.url %}
+                <a href="{{ project.url }}">link</a>
+            {% endif %}
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Blog {{ blog.id }} {% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <h2>{{ blog.title }}</h2>
+        <h4>{{ blog.creation_date }}</h4>
+        <h3>{{ blog.description|safe }}</h3>
+    </div>
+{% endblock content %}
