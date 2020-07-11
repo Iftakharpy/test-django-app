@@ -5,8 +5,7 @@
 
 {% block content %}
 <div class="container">
-    <h1>This is my Blog</h1>
-    <h1>There is {{ blogs.count }} blog{{ blogs.count|pluralize }}</h1> <!-- django filters -->
+    <h1>There are {{ blogs.count }} blog{{ blogs.count|pluralize }}</h1> <!-- django filters -->
     {% for blog in blogs %} <!-- django for loop -->
         <div>
             <a href="{% url 'blog:details' blog.id %}"><h2>{{ blog.title }}</h2></a>
